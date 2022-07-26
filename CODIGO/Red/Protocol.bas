@@ -3567,7 +3567,7 @@ On Error GoTo errhandler
         If str <> vbNullString Then
             frmMain.hlst.List(slot - 1) = str
         Else
-            Call frmMain.hlst.AddItem(JsonLanguage.item("NADA").item("TEXTO"))
+            frmMain.hlst.List(slot - 1) = JsonLanguage.item("NADA").item("TEXTO")
         End If
     Else
         str = DevolverNombreHechizo(UserHechizos(slot))
@@ -4435,7 +4435,7 @@ Private Sub HandleSetInvisible()
     
     If CharIndex = UserCharIndex Then
         If UserInvisible And TiempoInvi <= 0 Then
-            TiempoInvi = (IntervaloInvi * 0.05) - 1 ' Quï¿½???
+            TiempoInvi = (IntervaloInvi * 0.05) - 1 ' What???
         Else
             TiempoInvi = 0
         End If
@@ -11375,7 +11375,7 @@ On Error GoTo errhandler
         End If
     End With
     
-    'Determinamos que formulario se muestra, segï¿½n si recibimos la informaciï¿½n y la quest estï¿½ empezada o no.
+    'Determinamos que formulario se muestra, segun si recibimos la informacion y la quest esta empezada o no.
     If QuestEmpezada Then
         frmQuests.txtInfo.Text = tmpStr
     Else
@@ -11439,7 +11439,7 @@ On Error GoTo errhandler
     'Mostramos el formulario
     frmQuests.Show vbModeless, frmMain
     
-    'Pedimos la informaciï¿½n de la primer quest (si la hay)
+    'Pedimos la informacion de la primer quest (si la hay)
     If tmpByte Then Call Protocol.WriteQuestDetailsRequest(1)
     
     'Copiamos de vuelta el buffer
